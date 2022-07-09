@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import s from "./App.module.css";
+import { Cart } from "./components/Modal/Cart";
+import { Info } from "./components/UI/Info";
+import { Main } from "./components/UI/Main";
+import { NavBar } from "./components/UI/NavBar";
+import CartProvider from "./context/CartProvider";
 
 function App() {
+
+  const [showmodal , setshowmodal] = useState(false)
+
+
+  const showModalHandler = e => {
+    console.log(e);
+    setshowmodal(e.showModal)
+  }
+
+  const closeModalHandler = e => {
+    setshowmodal(e.showModal)
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <div className={s.App}>
+        {showmodal && <Cart onClose={closeModalHandler}/>}
+        <NavBar onModal={showModalHandler}/>
+        <Info />
+        <Main/>
+        </div>
+    </CartProvider>
   );
 }
 

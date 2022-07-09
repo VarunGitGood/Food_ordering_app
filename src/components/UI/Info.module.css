@@ -1,0 +1,30 @@
+.main {
+  background-color: rgb(227, 227, 227);
+  height: 15rem;
+  width: 40rem;
+  margin: 6rem 0 2rem 0;
+  border-radius: 12px;
+  -webkit-box-shadow: 9px 11px 18px 5px rgba(0,0,0,0.41); 
+box-shadow: 9px 11px 18px 5px rgba(0,0,0,0.41);
+}
+.text {
+    margin-top: 0;
+    padding: 20px 20px 0 20px;
+    font-weight: bold;
+    color: #353535;
+}
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin: 10px 0 0 0;
+    z-index: 1;
+    color: #353535;
+    transition: all 0.8s ease;
+}
+
+.img:hover {
+    transform: scale(1.2);
+    color: rgb(210, 75, 75);
+}

@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+    justify-content: space-between;
+    width: 28rem;
+    padding: 1rem;
+    border: 4px solid rgb(210, 207, 207);
+    border-radius: 10px;
+    background-color: rgb(227, 227, 227);
+    -webkit-box-shadow: 9px 11px 18px 5px rgba(0,0,0,0.41); 
+box-shadow: 9px 11px 18px 5px rgba(0,0,0,0.41);
+    min-width: 488px;
+}
+
+.des {
+    color: rgb(148, 147, 147);
+    font-family:'Times New Roman', Times, serif;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 10px;
+}
+.name {
+    color:rgb(53, 53, 53);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.cost {
+    color: rgb(53, 53, 53);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.input {
+    border: unset;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    all:unset;
+    height: 24px;
+    width: 47.58px;
+    border-radius: 8px;
+    background-color: rgb(226, 215, 215);
+    color: white;
+    font-weight: bolder;
+    margin-top: 10px;
+    border: 0.5px solid rgb(117, 117, 117);
+    padding: 3px;
+    transition: all 0.3s ease-out;
+    gap:1px;
+}
+.btn:hover {
+    background-color: rgb(210, 75, 75);
+    transform: scale(1.1);
+}

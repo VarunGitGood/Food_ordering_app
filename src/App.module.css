@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150vh;
+  background-image: url('../public/assets/backgorund.jpeg');
+  background-size: 100% 60%;
+  background-repeat: no-repeat;
+  background-color: rgb(224, 224, 224);
+}
