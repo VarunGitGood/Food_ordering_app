@@ -1,0 +1,66 @@
+.back {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 224, 224);
+}
+
+.form {
+    height: 400px;
+    width: 400px;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 12px;
+    border: solid 2px rgb(135, 36, 36);
+}
+.nav {
+    display: flex;
+    color: white;
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(135, 36, 36);
+    border-bottom: 1px solid black;
+    z-index: 2;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    top: 0px;
+}
+
+.title {
+    margin: 1rem 0 2rem 2rem;
+    color: white;
+    font-size: xx-large;
+    font-weight: 900;
+    text-shadow: 10px;
+}
+
+.holder {
+    margin: 2rem ;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.control {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btnl {
+    border: unset;
+    background-color:  rgb(135, 36, 36);
+    color: white;
+    font-weight: bold ;
+    padding: 6px;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+}
+
+.btnl:hover {
+    background-color: green;
+}

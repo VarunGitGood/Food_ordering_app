@@ -1,74 +1,18 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { CartContext } from "./cart-context";
+import { handler } from "./reducer";
 
 const defaultCart = {
   list: [],
   totalAmount: 0,
+  loggedIn : window.localStorage.getItem("isloggedin") || false
 };
 
-const handler = (state, action) => {
-  if (action.type === "add-item") {
-    const updatedTotalAmount =
-      state.totalAmount + action.item.cost * action.item.quantity;
-    const ifexist = state.list.findIndex((e) => e.id === action.item.id);
-    console.log(ifexist);
-    let updatedItems;
-    const existingItem = state.list[ifexist];
 
-    if (existingItem) {
-      updatedItems = [...state.list];
-      updatedItems[ifexist] = {
-        ...existingItem,
-        quantity: existingItem.quantity + action.item.quantity,
-      };
-    } else {
-      updatedItems = state.list.concat(action.item);
-    }
-    return {
-      list: updatedItems,
-      totalAmount: updatedTotalAmount,
-    };
-  } else if (action.type === "remove-item") {
-    const filter = (e) => {
-      if (e.id !== action.item.id) {
-        return e;
-      }
-    };
-    const ifexist = state.list.findIndex((e) => e.id === action.item.id);
-    let updatedItems;
-    let tobechanged = state.list[ifexist];
-    if (state.list[ifexist].quantity === 1) {
-      updatedItems = state.list.filter(filter);
-    } else {
-      // some amount present
-      updatedItems = [...state.list];
-      updatedItems[ifexist] = {
-        ...tobechanged,
-        quantity: tobechanged.quantity - 1,
-      };
-    }
-
-    const updatedTotalAmount = state.totalAmount - action.item.cost;
-
-    return {
-      list: updatedItems,
-      totalAmount: updatedTotalAmount,
-    };
-  }
-  else if(action.type === "destroy-cart")
-  { 
-    const updatedItems = []
-    const updatedTotalAmount = 0
-
-    return {
-      list:updatedItems,
-      totalAmount:updatedTotalAmount
-    }
-  }
-  return state;
-};
 
 const CartProvider = (props) => {
+
+ 
   const additemhandler = (item) => {
     dispatch({ type: "add-item", item: item });
   };
@@ -80,6 +24,9 @@ const CartProvider = (props) => {
   const destroyHandler = () => {
     dispatch({type: "destroy-cart"})
   }
+  const loginHandler = (bool) => {
+    dispatch({type: "update-state" , bool : bool})
+  }
 
 
   const [state, dispatch] = useReducer(handler, defaultCart);
@@ -87,9 +34,11 @@ const CartProvider = (props) => {
   const ctx = {
     list: state.list,
     totalAmount: state.totalAmount,
+    loggedIn: state.loggedIn,
     addItem: additemhandler,
     removeItem: removeitemhandler,
-    destroyCart: destroyHandler
+    destroyCart: destroyHandler,
+    isLoggedIn : loginHandler
   };
 
   return (

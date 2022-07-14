@@ -1,35 +1,52 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import s from "./App.module.css";
 import { Cart } from "./components/Modal/Cart";
 import { Info } from "./components/UI/Info";
 import { Main } from "./components/UI/Main";
 import { NavBar } from "./components/UI/NavBar";
-import CartProvider from "./context/CartProvider";
+import Auth from "./components/Auth/Auth";
+import { CartContext } from "./context/cart-context";
 
 function App() {
 
-  const [showmodal , setshowmodal] = useState(false)
+  const ctx = useContext(CartContext)
+  let log = ctx.loggedIn
 
 
-  const showModalHandler = e => {
+  const [showmodal, setshowmodal] = useState(false);
+
+  const showModalHandler = (e) => {
     console.log(e);
-    setshowmodal(e.showModal)
-  }
+    setshowmodal(e.showModal);
+  };
 
-  const closeModalHandler = e => {
-    setshowmodal(e.showModal)
-  }
+  const closeModalHandler = (e) => {
+    setshowmodal(e.showModal);
+  };
 
+  const clickHandler = (e) => {
+    console.log(e);
+  };
+
+  const logouthandler = e => {
+    ctx.isLoggedIn(false)
+    window.localStorage.removeItem("isloggedin")
+  }
 
   return (
-    <CartProvider>
-      <div className={s.App}>
-        {showmodal && <Cart onClose={closeModalHandler}/>}
-        <NavBar onModal={showModalHandler}/>
-        <Info />
-        <Main/>
-        </div>
-    </CartProvider>
+    <>
+      {log ? (
+          <div className={s.App}>
+            {showmodal && <Cart onClose={closeModalHandler} />}
+            <NavBar onModal={showModalHandler} />
+            <Info />
+            <Main />
+            <button onClick={logouthandler} className={s.logout}>Logout</button>
+          </div>
+      ) : (
+        <Auth onCreate={clickHandler} />
+      )}
+    </>
   );
 }
 

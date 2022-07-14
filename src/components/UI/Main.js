@@ -8,8 +8,7 @@ export const Main = (props) => {
       name:"Aloo paratha",
       cost: 15,
       id: 0,
-      quantity:0,
-      des:"Aloo paratha is a bread dish originating from India. It is a breakfast dish that is popular in the Indian subcontinent."
+      quantity:0
     },
     {
       name:'Fried Manchurian Rice',
@@ -42,7 +41,6 @@ export const Main = (props) => {
       quantity: 0
     }
   ]
-
 
   return (
     <div>{menu.map(items => {
