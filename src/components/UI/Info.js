@@ -8,7 +8,7 @@ export const Info = () => {
       <div className={s.img}><FontAwesomeIcon icon={faBowlFood} size='2x' spin ></FontAwesomeIcon></div>
       <p className={s.text}>
         One of the first to hone the concept of pre-plated Indian food, the
-        award winning Varq purveys a modern Indian gourmet dining experience
+        award winning OJAS purveys a modern Indian gourmet dining experience
         offering authenticity of taste and artistic presentation. The menu
         engages with all the five senses with visually stunning dishes, delight
         on the palate and aromas of Indian spices and promises to set a

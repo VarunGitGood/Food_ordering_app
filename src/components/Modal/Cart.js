@@ -4,7 +4,8 @@ import { ModalFoodHolder } from "../Holders/ModalFoodHolder";
 import s from "./Cart.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupee } from "@fortawesome/free-solid-svg-icons";
-
+import {app , db} from '../../firebaseConfig'
+import { addDoc , collection , getDoc } from "firebase/firestore";
 
 
 
@@ -14,15 +15,25 @@ export const Cart = (props) => {
   
   const modalctx = useContext(CartContext)
 
-
-
+  const dbInstance = collection(db , "data")
   
+  const data = {
+    foodData : modalctx.list,
+    totalAmount: modalctx.totalAmount
+  }
 
 
-  const clickHandler = (e) => {
-    window.alert("Order has been placed!!");
-    modalctx.destroyCart()
-    props.onClose({ showModal: false });
+
+  async function clickHandler(e) {
+    try {
+      await addDoc(dbInstance, data)
+      window.alert("Order has been placed!!");
+      modalctx.destroyCart()
+      props.onClose({ showModal: false });
+    }
+    catch(err) {
+      alert(err.message)
+    }
   };
 
   const cancelHandler = (e) => {

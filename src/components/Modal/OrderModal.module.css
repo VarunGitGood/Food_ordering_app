@@ -1,0 +1,50 @@
+.back {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.50);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s linear;
+}
+
+.container {
+    position: fixed;
+    top: 15vh;
+    left: 30%;
+    width: 40%;
+    z-index: 100;
+    height: 500px;
+    border-radius: 8px;
+    font-size: large;
+    font-weight: 900;
+    background-color: rgb(227, 227, 227);
+    display: flex;
+    flex-direction: column;
+    color: #353535;
+}
+
+.header {
+    top: 0;
+    height: 10%;
+    padding: 10px;
+    border-bottom: solid 2px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main {
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: none;
+    padding: 2px;
+}
+.btn {
+    transition: all 0.2s ease;
+}
+
+.btn:hover  {
+    background-color:  rgb(210, 75, 75);
+}

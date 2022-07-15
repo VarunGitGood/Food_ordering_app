@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/cart-context";
 import s from "./CartButton.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 export const CartButton = (props) => {
   const [amt, setamt] = useState(0);
   const clickHandler = (e) => {
@@ -21,7 +21,7 @@ export const CartButton = (props) => {
 
   return (
     <button onClick={clickHandler} className={s.btn}>
-      <span><FontAwesomeIcon icon={faShoppingCart} /> Items : {amt}</span>
+      <span><FontAwesomeIcon icon={faShoppingCart}/> Items : {amt}</span>
     </button>
   );
 };

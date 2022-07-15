@@ -28,10 +28,7 @@ function App() {
     console.log(e);
   };
 
-  const logouthandler = e => {
-    ctx.isLoggedIn(false)
-    window.localStorage.removeItem("isloggedin")
-  }
+  
 
   return (
     <>
@@ -41,7 +38,6 @@ function App() {
             <NavBar onModal={showModalHandler} />
             <Info />
             <Main />
-            <button onClick={logouthandler} className={s.logout}>Logout</button>
           </div>
       ) : (
         <Auth onCreate={clickHandler} />
