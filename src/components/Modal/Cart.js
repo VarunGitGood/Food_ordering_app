@@ -5,8 +5,7 @@ import s from "./Cart.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupee } from "@fortawesome/free-solid-svg-icons";
 import {app , db} from '../../firebaseConfig'
-import { addDoc , collection , getDoc } from "firebase/firestore";
-
+import { addDoc, collection, getDoc, setDoc, doc } from "firebase/firestore";
 
 
 
@@ -15,18 +14,17 @@ export const Cart = (props) => {
   
   const modalctx = useContext(CartContext)
 
-  const dbInstance = collection(db , "data")
-  
   const data = {
     foodData : modalctx.list,
-    totalAmount: modalctx.totalAmount
+    totalAmount: modalctx.totalAmount,
+    time: Date().toString()
   }
-
-
+  const a = window.localStorage.getItem("uid")
+  const dbInstance = collection(db , "User" , a , "orderData")
 
   async function clickHandler(e) {
     try {
-      await addDoc(dbInstance, data)
+      await addDoc(dbInstance , data);
       window.alert("Order has been placed!!");
       modalctx.destroyCart()
       props.onClose({ showModal: false });

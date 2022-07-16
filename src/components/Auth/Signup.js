@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import app from "../../firebaseConfig";
-import s from './auth.module.css'
+import s from "./auth.module.css";
 function Signup(props) {
   const emailRef = useRef();
   const passRef = useRef();
@@ -11,17 +11,18 @@ function Signup(props) {
     e.preventDefault();
 
     try {
-      await createUserWithEmailAndPassword(
+      let a = await createUserWithEmailAndPassword(
         gauth,
         emailRef.current.value,
         passRef.current.value
       );
+      console.log(a);
       alert("account created");
       emailRef.current.value = "";
       passRef.current.value = "";
-      props.onCret()
+      props.onCret();
     } catch (err) {
-      alert(err.message.slice(22,35))
+      alert(err.message.slice(22, 35));
     }
   }
 
@@ -37,15 +38,23 @@ function Signup(props) {
             type="email"
             placeholder="Enter College Email"
             ref={emailRef}
+            required
           />
         </div>
         <div className={s.holder}>
           <label>Password</label>
-          <input type="password" placeholder="Enter Password" ref={passRef} />
+          <input
+            type="password"
+            placeholder="Enter Password"
+            ref={passRef}
+            required
+          />
         </div>
         <div className={s.holder}>Sign Up now</div>
         <div className={s.control}>
-          <button type="submit" className={s.btnl}>Sign Up</button>
+          <button type="submit" className={s.btnl}>
+            Sign Up
+          </button>
           <button
             onClick={(e) => {
               props.onCret();

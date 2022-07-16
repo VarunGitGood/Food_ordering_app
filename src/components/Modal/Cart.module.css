@@ -57,4 +57,5 @@
 .btn:hover {
     background-color: rgb(210, 75, 75);
     border: 0.5px solid rgb(117, 117, 117);
+    color: white;
 }

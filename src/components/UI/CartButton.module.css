@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: rgb(107, 3, 3);
+    background-color: rgb(129, 0, 0);
     width: 10rem;
     height: 3rem;
     border-radius: 12px;
@@ -14,6 +14,7 @@
     transition: all 0.4s ease;
     border: 2px solid white;
     z-index: 2;
+    cursor: pointer;
 }
 
 .btn:hover {

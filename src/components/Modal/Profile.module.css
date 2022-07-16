@@ -24,28 +24,3 @@
     flex-direction: column;
     color: #353535;
 }
-
-.header {
-    top: 0;
-    height: 10%;
-    padding: 10px;
-    border-bottom: solid 2px black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.main {
-    height: 85%;
-    overflow-y: scroll;
-    overflow-x: none;
-    padding: 2px;
-}
-.btn {
-    transition: all 0.2s ease;
-}
-
-.btn:hover  {
-    background-color:  rgb(210, 75, 75);
-    color: white;
-}

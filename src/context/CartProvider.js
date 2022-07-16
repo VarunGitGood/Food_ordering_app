@@ -5,7 +5,7 @@ import { handler } from "./reducer";
 const defaultCart = {
   list: [],
   totalAmount: 0,
-  loggedIn : window.localStorage.getItem("isloggedin") || false
+  loggedIn: window.localStorage.getItem("isloggedin") || false
 };
 
 
@@ -24,9 +24,11 @@ const CartProvider = (props) => {
   const destroyHandler = () => {
     dispatch({type: "destroy-cart"})
   }
-  const loginHandler = (bool) => {
-    dispatch({type: "update-state" , bool : bool})
+  const loginHandler = (bool,uid) => {
+    dispatch({type: "update-state" , bool : bool, uid:uid})
   }
+
+
 
 
   const [state, dispatch] = useReducer(handler, defaultCart);
@@ -38,7 +40,7 @@ const CartProvider = (props) => {
     addItem: additemhandler,
     removeItem: removeitemhandler,
     destroyCart: destroyHandler,
-    isLoggedIn : loginHandler
+    isLoggedIn : loginHandler,
   };
 
   return (

@@ -1,0 +1,39 @@
+.container {
+    min-height: 4rem;
+    margin: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(202, 202, 202);
+    padding: 10px;
+    border-radius: 10px;
+    border: 4px solid rgb(210, 207, 207)
+}
+
+.items {
+    display: flex;
+    word-break: break-all;
+    white-space: pre-wrap;
+    max-width: 60%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    min-width: 40%;
+    font-family: 'Times New Roman', Times, serif
+}
+h5 {
+    margin: 0;
+}
+.tot {
+    font-size: large;
+    padding: 2px;
+}

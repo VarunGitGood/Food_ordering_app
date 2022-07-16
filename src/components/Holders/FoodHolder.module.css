@@ -52,8 +52,9 @@ box-shadow: 9px 11px 18px 5px rgba(0,0,0,0.41);
     margin-top: 10px;
     border: 0.5px solid rgb(117, 117, 117);
     padding: 3px;
-    transition: all 0.3s ease-out;
+    transition: all 0.3s cubic-bezier(0.21, 0.65, 0.06, 0.92);
     gap:1px;
+    cursor: pointer;
 }
 .btn:hover {
     background-color: rgb(210, 75, 75);

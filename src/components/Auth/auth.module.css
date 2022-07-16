@@ -23,7 +23,7 @@
     height: 10%;
     width: 100%;
     position: fixed;
-    background-color: rgb(135, 36, 36);
+    background-color: rgb(159, 23, 23);
     border-bottom: 1px solid black;
     z-index: 2;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -55,7 +55,7 @@
 
 .btnl {
     border: unset;
-    background-color:  rgb(135, 36, 36);
+    background-color: rgb(159, 23, 23);
     color: white;
     font-weight: bold ;
     padding: 6px;
