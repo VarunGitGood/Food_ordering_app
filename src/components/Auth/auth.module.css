@@ -61,6 +61,7 @@
     padding: 6px;
     border-radius: 10px;
     transition: all 0.2s linear;
+    curson:pointer;
 }
 
 .btnl:hover {
