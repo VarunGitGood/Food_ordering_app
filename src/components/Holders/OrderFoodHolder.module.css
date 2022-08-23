@@ -14,7 +14,7 @@
     word-break: break-all;
     white-space: pre-wrap;
     max-width: 60%;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 .data {
@@ -28,7 +28,7 @@
     align-items: flex-end;
     flex-direction: column;
     min-width: 40%;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Roboto Slab', serif;
 }
 h5 {
     margin: 0;

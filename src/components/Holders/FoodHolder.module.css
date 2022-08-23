@@ -15,7 +15,7 @@ box-shadow: 9px 11px 18px 5px rgba(0,0,0,0.41);
 
 .des {
     color: rgb(148, 147, 147);
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Roboto Slab', serif;
 }
 .info {
     display: flex;
@@ -25,7 +25,7 @@ box-shadow: 9px 11px 18px 5px rgba(0,0,0,0.41);
 }
 .name {
     color:rgb(53, 53, 53);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 .cost {
     color: rgb(53, 53, 53);

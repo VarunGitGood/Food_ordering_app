@@ -12,7 +12,7 @@
     border-radius: 10px;
     color: white;
     border: solid white 3px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
     transition: all 0.2s cubic-bezier(0.21, 0.65, 0.06, 0.92);
     cursor: pointer;
 
@@ -35,7 +35,7 @@
     background-color: rgb(159, 23, 23);
     border-radius: 12px;
     color: white;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-weight: bold;
     display: flex;
     justify-content: center;
