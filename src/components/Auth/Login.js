@@ -1,10 +1,18 @@
 import React, { useContext, useRef } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app, db } from "../../firebaseConfig";
+import vid from "./vid.mp4";
 import CartProvider from "../../context/CartProvider";
 import { CartContext } from "../../context/cart-context";
-import s from "./auth.module.css";
+import s from "./Login.module.css";
 import { addDoc, collection, getDoc, setDoc, doc } from "firebase/firestore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  faCheck,
+  faLock,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 function Login(props) {
   const emailRef = useRef();
   const passRef = useRef();
@@ -26,7 +34,7 @@ function Login(props) {
         uid: a.user.uid,
       };
       await setDoc(ref, data, { merge: true });
-      window.localStorage.setItem("isloggedin", true);
+
       window.localStorage.setItem("uid", a.user.uid);
       window.localStorage.setItem("isloggedin", true);
 
@@ -42,42 +50,62 @@ function Login(props) {
         <div className={s.nav}>
           <div className={s.title}>OJAS</div>
         </div>
-        <form onSubmit={submitHandler} className={s.form}>
-          <div className={s.holder}>
-            <label>Email</label>
-            <input
-              type="email"
-              placeholder="Enter College Email"
-              ref={emailRef}
-              required
-            />
-          </div>
-          <div className={s.holder}>
-            <label>Password</label>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              ref={passRef}
-              required
-            />
-          </div>
-          <div className={s.holder}>Good Food Can't Wait</div>
-          <div className={s.control}>
-            <button type="submit" className={s.btnl}>
-              Login
+        <div className={s.wrapper}>
+          <form className={s.form} onSubmit={submitHandler}>
+            <span className={s.tit}>Login</span>
+            <div className={s.email}>
+              <span className={s.icon}>
+                <FontAwesomeIcon icon={faUser} />
+              </span>
+
+              <input
+                type="email"
+                placeholder="Enter College Email"
+                ref={emailRef}
+                required
+                // className={s.email__input}
+              />
+            </div>
+            <div className={s.pass}>
+              <span className={s.icon}>
+                <FontAwesomeIcon icon={faLock} />
+              </span>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                ref={passRef}
+                required
+                // className={s.pass__input}
+              />
+            </div>
+            <button class={s.login__submit} type="submit">
+              <span class="button__text">Log In Now</span>
             </button>
-            <button
-              onClick={(e) => {
-                props.onCreate();
-              }}
-            >
-              Sign Up
-            </button>
+            <div className={s.signup_arrow}>Don't have an account?</div>
+            <div className={s.scam}>
+              <h2>Form One Right Now</h2>
+              <button
+                className={s.btn}
+                onClick={(e) => {
+                  props.onCreate();
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={faArrowRight}
+                  size="2x"
+                  className={s.icon}
+                />
+              </button>
+            </div>
+          </form>
+          <div className={s.vid}>
+            <video autoPlay loop muted className={s.video}>
+              <source src={vid} type="video/mp4" />
+            </video>
           </div>
-        </form>
+        </div>
       </div>
     </CartProvider>
   );
 }
-
 export default Login;

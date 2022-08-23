@@ -3,8 +3,6 @@ import Login from './Login'
 import Signup from './Signup'
 
 
-
-
 function Auth() {
     
     const [s ,sets] = useState(false)

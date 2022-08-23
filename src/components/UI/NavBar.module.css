@@ -8,15 +8,17 @@
     background-color: rgb(159, 23, 23);
     border-bottom: 1px solid black;
     z-index: 2;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
 }
 
 .title {
     margin: 1rem 0 2rem 2rem;
     color: white;
-    font-size: xx-large;
-    font-weight: 900;
+    font-size: x-large;
     text-shadow: 10px;
+    font-family: 'Mulish', sans-serif;
+    font-size:x-large;
+    font-weight: 700;
 }
 
 .profile {
